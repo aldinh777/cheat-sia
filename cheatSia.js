@@ -1,4 +1,5 @@
 var versi = 'baik';
+var autoSubmit = true;
 
 !function isiFormOtomatis() {
   function randomInt(min, max) {
@@ -38,7 +39,9 @@ var versi = 'baik';
   }
   
   submit = document.querySelector('#submit');  
-  submit.click();
+  if (autoSubmit) {
+    submit.click();
+  }
 }(versi)
 
 !function pindahHalamanKeKuisioner() {

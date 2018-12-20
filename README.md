@@ -1,9 +1,12 @@
 # Cheat SIA Unmul
 
+Script isi formulir SIA Unmul otomatis, range default nya antara 3 sampai 5
+
 copy aja dari sini kalau malas buka code
 
 ```js
 var versi = 'baik';
+var autoSubmit = true;
 
 !function isiFormOtomatis() {
   function randomInt(min, max) {
@@ -43,7 +46,9 @@ var versi = 'baik';
   }
   
   submit = document.querySelector('#submit');  
-  submit.click();
+  if (autoSubmit) {
+    submit.click();
+  }
 }(versi)
 
 !function pindahHalamanKeKuisioner() {
@@ -54,4 +59,48 @@ var versi = 'baik';
     }
   });  
 }()
+```
+
+## Ritual Dasar
+
+1. Buka Halaman [SIA Unmul](http://sia-dev.unmul.ac.id/login), terus Login
+2. Pilih Tab Kartu Hasil Studi
+3. Pilih Semester terkait
+4. Buka inspect element (Klik kanan > inspect element) atau (```ctrl + shift + i```)
+5. Pilih tab **console**
+
+## Pindah Halaman Otomatis
+
+1. Salin script ini, lalu paste di console tadi
+2. Jangan lupa tekan enter
+3. Halaman bakal pindah sendiri ke kuisioner pertama
+
+## Otomatis ngisi
+
+1. Pastikan anda berada di halaman isi form nya
+2. Salin script lalu paste di console
+3. Otomatis keisi sendiri, dan otomatis nge klik simpan
+
+## Versi Jahad!!!
+
+Kalau tydac ingin mengisi form dengan range 3 - 5
+
+```js
+var versi='baik';
+```
+jadi
+```js
+var versi='jahat';
+```
+Range score menjadi 1 - 3, dan pesan saran jadi agak berbeda
+
+## Tidak langsung Klik Submit
+
+Kalau tydac ingin otomatis nge submit, ganti 
+```js
+var autoSubmit = true;
+```
+jadi
+```js
+var autoSubmit = false;
 ```
