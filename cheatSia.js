@@ -29,7 +29,7 @@ var autoSubmit = true;
   
   for (var i = 1; i <= 52; i++) {
     var inputs = document.querySelectorAll(`[name="jawab[${i}]"]`);
-    var pilihan = (versi === 'baik' ? randomInt(3, 5) : randomInt(1, 3).toString());
+    var pilihan = (versi === 'baik' ? randomInt(3, 5) : randomInt(1, 3)).toString();
     if (inputs.length === 0) continue;
     inputs.forEach(input => {
       if (input.value === pilihan) {
